@@ -73,6 +73,84 @@ class HomeScreen extends StatelessWidget {
                         fontSize: 60),
                   ),
                   SearchBar(),
+                  Container(
+                      height: 80,
+                      width: 450,
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "ujian :",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          SizedBox(
+                                            height: 12,
+                                          ),
+                                          Container(
+                                            child: Column(
+                                              children: [
+                                                Text(
+                                                  "Tanggal 10 November 22",
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 132, 132, 132),
+                                                      fontSize: 12),
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ]),
+                                  ),
+                                  Container(
+                                    child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Desc:",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          SizedBox(
+                                            height: 12,
+                                          ),
+                                          Container(
+                                            child: Column(
+                                              children: [
+                                                Text(
+                                                  "on due Date",
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 132, 132, 132),
+                                                      fontSize: 12),
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ]),
+                                  )
+                                ],
+                              ),
+                            ]),
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Expanded(
                     child: GridView.count(
                       physics: NeverScrollableScrollPhysics(),
