@@ -67,45 +67,109 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Text(
                     "Able Ballet",
-                    style: Theme.of(context)
-                        .textTheme
-                        .displayMedium
-                        .copyWith(fontWeight: FontWeight.w900),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontFamily: "harlow-solid-italic",
+                        fontSize: 60),
                   ),
                   SearchBar(),
                   Expanded(
                     child: GridView.count(
+                      physics: NeverScrollableScrollPhysics(),
                       crossAxisCount: 2,
                       childAspectRatio: .85,
                       crossAxisSpacing: 20,
                       mainAxisSpacing: 20,
                       children: <Widget>[
-                        CategoryCard(
-                          title: "Ballet",
-                          svgSrc: "assets/icons/icon_ballet.svg",
-                          press: () {},
+                        Card(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/ballet.jpg",
+                                height: 100,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text("Ballet")
+                            ],
+                          ),
                         ),
-                        CategoryCard(
-                          title: "Jazz",
-                          svgSrc: "assets/icons/Excrecises.svg",
-                          press: () {},
+                        Card(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/jazz.jpg",
+                                height: 100,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text("Jazz")
+                            ],
+                          ),
                         ),
-                        CategoryCard(
-                          title: "Modern Dance",
-                          svgSrc: "assets/icons/Meditation.svg",
-                          press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                return DetailsScreen();
-                              }),
-                            );
-                          },
+                        Card(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/MD.jpg",
+                                height: 100,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text("Modern Dance")
+                            ],
+                          ),
                         ),
-                        CategoryCard(
-                          title: "Kpop",
-                          svgSrc: "assets/icons/yoga.svg",
-                          press: () {},
+                        Card(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/kpop.jpg",
+                                height: 100,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text("Kpop")
+                            ],
+                          ),
+                        ),
+                        Card(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/hiphop1.jpg",
+                                height: 100,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text("HipHop")
+                            ],
+                          ),
+                        ),
+                        Card(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/contemporary.jpg",
+                                height: 100,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text("Contemporary")
+                            ],
+                          ),
                         ),
                       ],
                     ),

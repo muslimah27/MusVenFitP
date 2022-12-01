@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/constants.dart';
+import 'package:meditation_app/jadwal.dart';
 import 'package:meditation_app/main.dart';
 
 import '../screens/details_screen.dart';
@@ -24,7 +25,7 @@ class BottomNavBar extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return DetailsScreen();
+                  return HomeScreen();
                 }),
               );
             },
@@ -41,8 +42,18 @@ class BottomNavBar extends StatelessWidget {
                 }),
               );
             },
-            child: Icon(
-              Icons.dashboard,
+            child: InkWell(
+              child: Icon(
+                Icons.dashboard,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return Jadwal();
+                  }),
+                );
+              },
             ),
           ),
           Icon(Icons.account_balance),
