@@ -3,8 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:meditation_app/constants.dart';
+import 'package:meditation_app/home.dart';
 import 'package:meditation_app/jadwal.dart';
 import 'package:meditation_app/main.dart';
+import 'package:meditation_app/profile.dart';
 
 import '../screens/details_screen.dart';
 
@@ -58,7 +60,17 @@ class BottomNavBar extends StatelessWidget {
               },
             ),
           ),
-          Icon(Icons.person, color: Color.fromARGB(255, 110, 110, 110)),
+          InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return ProfileScreen();
+                  }),
+                );
+              },
+              child: Icon(Icons.person,
+                  color: Color.fromARGB(255, 110, 110, 110))),
         ],
       ),
     );

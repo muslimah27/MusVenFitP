@@ -13,16 +13,25 @@ class Jadwal extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
+            // Here the height of the container is 45% of our total height
             height: size.height * .45,
             decoration: BoxDecoration(
-              color: kBlueLightColor,
+              color: Color(0xFFF5CEB8),
               image: DecorationImage(
-                image: AssetImage("assets/images/meditation_bg.png"),
-                fit: BoxFit.fitWidth,
+                alignment: Alignment.centerLeft,
+                image: AssetImage("assets/images/undraw_pilates_gpdb.png"),
               ),
             ),
           ),
-          SafeArea(child: Text("jadwal page")),
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[],
+              ),
+            ),
+          )
         ],
       ),
     );
