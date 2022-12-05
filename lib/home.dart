@@ -68,25 +68,27 @@ class HomeScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   "INFO :",
-                                  style: TextStyle(color: Colors.black),
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
                                 ),
                                 Text(
-                                  "Acara Internal-",
+                                  "Acara Internal :",
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 132, 132, 132),
-                                      fontSize: 12),
-                                ),
-                                Text(
-                                  "Acara Internal-",
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 132, 132, 132),
-                                      fontSize: 12),
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 12,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
                                 ),
                                 Text(
                                   "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 132, 132, 132),
-                                      fontSize: 12),
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 12,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
                                 ),
                               ]),
                         )),
@@ -112,7 +114,14 @@ class HomeScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Text("Ballet")
+                                Text(
+                                  "Ballet",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 18,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -127,7 +136,14 @@ class HomeScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Text("Jazz")
+                                Text(
+                                  "Jazz",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 18,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -142,7 +158,14 @@ class HomeScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Text("Modern Dance")
+                                Text(
+                                  "Modern Dance",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 18,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -157,7 +180,14 @@ class HomeScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Text("Kpop")
+                                Text(
+                                  "Kpop",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 18,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -172,7 +202,14 @@ class HomeScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Text("HipHop")
+                                Text(
+                                  "HipHop",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 18,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -187,7 +224,14 @@ class HomeScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Text("Contemporary")
+                                Text(
+                                  "Contemporary",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 18,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                )
                               ],
                             ),
                           ),

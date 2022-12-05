@@ -34,8 +34,8 @@ class BottomNavBar extends StatelessWidget {
                 );
               },
               child: SvgPicture.asset(
-                "assets/icons/home1.svg", //asset location
-                color: Color.fromARGB(255, 110, 110, 110), //svg color
+                "assets/icons/home.svg", //asset location
+                //color: Color.fromARGB(255, 110, 110, 110), //svg color
                 semanticsLabel: 'SVG From asset folder.', height: 20,
               )),
           InkWell(
@@ -48,8 +48,10 @@ class BottomNavBar extends StatelessWidget {
               );
             },
             child: InkWell(
-              child: Icon(Icons.list_alt_outlined,
-                  color: Color.fromARGB(255, 110, 110, 110)),
+              child: Icon(
+                Icons.calendar_month,
+              ),
+              //color: Color.fromARGB(255, 110, 110, 110)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -61,16 +63,19 @@ class BottomNavBar extends StatelessWidget {
             ),
           ),
           InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return ProfileScreen();
-                  }),
-                );
-              },
-              child: Icon(Icons.person,
-                  color: Color.fromARGB(255, 110, 110, 110))),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return ProfileScreen();
+                }),
+              );
+            },
+            child: Icon(
+              Icons.person,
+            ),
+          )
+          //color: Color.fromARGB(255, 110, 110, 110))),
         ],
       ),
     );

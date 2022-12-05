@@ -66,6 +66,16 @@ flutter:
         - asset: assets/fonts/harlow-solid-italic/harlow-solid-italic.ttf
           weight: 600
 
+    
+    - family: Caviar-Dreams
+      fonts:
+      
+        - asset: assets/fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf
+          weight: 600
+        
+
+    
+
         
   #   - family: Trajan Pro
   #     fonts:

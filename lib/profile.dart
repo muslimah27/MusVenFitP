@@ -36,16 +36,18 @@ class ProfileScreen extends StatelessWidget {
               child: Container(
                 width: width,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 73),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 45),
                 child: Column(
                   children: [
-                    Text(
-                      'My\nProfile',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 34,
-                        fontFamily: 'Nisebuschgardens',
+                    Align(
+                      alignment: Alignment(-0.8, 0.8),
+                      child: Text(
+                        "Profil",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontFamily: "harlow-solid-italic",
+                            fontSize: 60),
+                        textAlign: TextAlign.left,
                       ),
                     ),
                     SizedBox(
@@ -53,11 +55,11 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     CircleAvatar(
                       backgroundColor: Colors.amber,
-                      radius: 50,
+                      radius: 80,
                       foregroundImage: AssetImage("assets/icons/ballet.jpg"),
                     ),
                     SizedBox(
-                      height: 22,
+                      height: 5,
                     ),
                     Container(
                       width: 150,
@@ -76,8 +78,8 @@ class ProfileScreen extends StatelessWidget {
                                   child: Text(
                                     'MusVenFit',
                                     style: TextStyle(
-                                      color: Color.fromRGBO(39, 105, 171, 1),
-                                      fontFamily: 'Nunito',
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontFamily: 'Caviar-Dreams',
                                       fontSize: 26,
                                     ),
                                   ),
@@ -92,7 +94,7 @@ class ProfileScreen extends StatelessWidget {
                       height: 30,
                     ),
                     Container(
-                      height: height * 0.5,
+                      height: height * 0.8,
                       width: width * 0.8,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
@@ -108,21 +110,35 @@ class ProfileScreen extends StatelessWidget {
                             Text(
                               'Profil Lengkap',
                               style: TextStyle(
-                                color: Color.fromRGBO(39, 105, 171, 1),
+                                color: Color.fromARGB(255, 107, 102, 102),
                                 fontSize: 27,
-                                fontFamily: 'Nunito',
+                                fontFamily: 'Caviar-Dreams',
                               ),
                             ),
                             Divider(
-                              thickness: 2.5,
+                              thickness: 2,
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Container(
-                              height: height * 0.15,
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Nama:',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 15,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              padding: EdgeInsets.all(15),
+                              width: double.infinity,
+                              height: height * 0.1,
                               decoration: BoxDecoration(
-                                color: Colors.grey,
+                                color: Color(0xFFF5CEB8),
                                 borderRadius: BorderRadius.circular(30),
                               ),
                             ),
@@ -130,9 +146,95 @@ class ProfileScreen extends StatelessWidget {
                               height: 10,
                             ),
                             Container(
-                              height: height * 0.15,
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Tempat, Tanggal Lahir:',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 15,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              padding: EdgeInsets.all(15),
+                              width: double.infinity,
+                              height: height * 0.1,
                               decoration: BoxDecoration(
-                                color: Colors.grey,
+                                color: Color(0xFFF5CEB8),
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Email:',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 15,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              padding: EdgeInsets.all(15),
+                              width: double.infinity,
+                              height: height * 0.1,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF5CEB8),
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Nomor Telepon:',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 15,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              padding: EdgeInsets.all(15),
+                              width: double.infinity,
+                              height: height * 0.1,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF5CEB8),
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Dance yang diambil:',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 15,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              padding: EdgeInsets.all(15),
+                              width: double.infinity,
+                              height: height * 0.1,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF5CEB8),
                                 borderRadius: BorderRadius.circular(30),
                               ),
                             ),

@@ -25,10 +25,218 @@ class Jadwal extends StatelessWidget {
           ),
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[],
+                children: <Widget>[
+                  Text(
+                    "Jadwal",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontFamily: "harlow-solid-italic",
+                        fontSize: 60),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                      height: 90,
+                      width: double.infinity,
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "SENIN:",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                " ",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                            ]),
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                      height: 90,
+                      width: double.infinity,
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "SENIN:",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                " ",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                            ]),
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                      height: 90,
+                      width: double.infinity,
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "SENIN:",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                " ",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                            ]),
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                      height: 90,
+                      width: double.infinity,
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "SENIN:",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                " ",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                            ]),
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                      height: 90,
+                      width: double.infinity,
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "SENIN:",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                " ",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                            ]),
+                      )),
+                ],
               ),
             ),
           )
@@ -92,10 +300,6 @@ class SeassionCard extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 10),
-                    Text(
-                      "Session $seassionNum",
-                      style: Theme.of(context).textTheme.subtitle1,
-                    )
                   ],
                 ),
               ),

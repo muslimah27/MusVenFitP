@@ -18,7 +18,11 @@ class SearchBar extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: "Search",
-          icon: SvgPicture.asset("assets/icons/search.svg"),
+          icon: SvgPicture.asset(
+            "assets/icons/search1.svg",
+            height: 30,
+            width: 30,
+          ),
           border: InputBorder.none,
         ),
       ),
