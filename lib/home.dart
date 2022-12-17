@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:meditation_app/widgets/bottom_nav_bar.dart';
-import 'package:meditation_app/widgets/search_bar.dart';
+
+import 'ballet.dart';
+import 'contemporary.dart';
+import 'hiphop.dart';
+import 'jazz.dart';
+import 'kpop.dart';
+import 'modern_dance.dart';
+import 'widgets/bottom_nav_bar.dart';
+import 'widgets/search_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -103,136 +110,196 @@ class HomeScreen extends StatelessWidget {
                         crossAxisSpacing: 20,
                         mainAxisSpacing: 20,
                         children: <Widget>[
-                          Card(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/icons/ballet.jpg",
-                                  height: 100,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "Ballet",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 107, 102, 102),
-                                    fontSize: 18,
-                                    fontFamily: 'Caviar-Dreams',
+                          InkWell(
+                            onTap: (() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return balletPage();
+                                }),
+                              );
+                            }),
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/icons/ballet.jpg",
+                                    height: 100,
                                   ),
-                                )
-                              ],
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "Ballet",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 18,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                          Card(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/icons/jazz.jpg",
-                                  height: 100,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "Jazz",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 107, 102, 102),
-                                    fontSize: 18,
-                                    fontFamily: 'Caviar-Dreams',
+                          InkWell(
+                            onTap: (() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return jazzPage();
+                                }),
+                              );
+                            }),
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/icons/jazz.jpg",
+                                    height: 100,
                                   ),
-                                )
-                              ],
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "Jazz",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 18,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                          Card(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/icons/MD.jpg",
-                                  height: 100,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "Modern Dance",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 107, 102, 102),
-                                    fontSize: 18,
-                                    fontFamily: 'Caviar-Dreams',
+                          InkWell(
+                            onTap: (() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return moderndancePage();
+                                }),
+                              );
+                            }),
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/icons/MD.jpg",
+                                    height: 100,
                                   ),
-                                )
-                              ],
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "Modern Dance",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 18,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                          Card(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/icons/kpop.jpg",
-                                  height: 100,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "Kpop",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 107, 102, 102),
-                                    fontSize: 18,
-                                    fontFamily: 'Caviar-Dreams',
+                          InkWell(
+                            onTap: (() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return kpopPage();
+                                }),
+                              );
+                            }),
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/icons/kpop.jpg",
+                                    height: 100,
                                   ),
-                                )
-                              ],
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "Kpop",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 18,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                          Card(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/icons/hiphop1.jpg",
-                                  height: 100,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "HipHop",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 107, 102, 102),
-                                    fontSize: 18,
-                                    fontFamily: 'Caviar-Dreams',
+                          InkWell(
+                            onTap: (() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return hiphopPage();
+                                }),
+                              );
+                            }),
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/icons/hiphop1.jpg",
+                                    height: 100,
                                   ),
-                                )
-                              ],
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "HipHop",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 18,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                          Card(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/icons/contemporary.jpg",
-                                  height: 100,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "Contemporary",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 107, 102, 102),
-                                    fontSize: 18,
-                                    fontFamily: 'Caviar-Dreams',
+                          InkWell(
+                            onTap: (() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return contemporaryPage();
+                                }),
+                              );
+                            }),
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/icons/contemporary.jpg",
+                                    height: 100,
                                   ),
-                                )
-                              ],
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "Contemporary",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 107, 102, 102),
+                                      fontSize: 18,
+                                      fontFamily: 'Caviar-Dreams',
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ],

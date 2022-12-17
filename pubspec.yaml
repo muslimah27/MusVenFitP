@@ -27,6 +27,7 @@ dependencies:
   iconsax: ^0.0.8
   ionicons: ^0.2.1
   flutter_vector_icons: ^2.0.0
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -74,7 +75,17 @@ flutter:
           weight: 600
         
 
-    
+    - family: short-baby-font
+      fonts:
+      
+        - asset: assets/fonts/short-baby-font/ShortBaby-Mg2w.ttf
+          weight: 600
+
+    - family: monday-feelings-font
+      fonts:
+      
+        - asset: assets/fonts/monday-feelings-font/MondayFeelings-7BD2l.ttf
+          weight: 600
 
         
   #   - family: Trajan Pro
