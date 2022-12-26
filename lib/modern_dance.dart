@@ -181,7 +181,14 @@ class _moderndancePageState extends State<moderndancePage> {
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Modern Dance"),
+                    Text(
+                      "Daftar Modern Dance",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontFamily: 'monday-feelings-font',
+                      ),
+                    ),
                     SizedBox(
                       height: 30,
                     ),

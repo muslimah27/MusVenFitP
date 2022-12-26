@@ -181,7 +181,14 @@ class _kpopPageState extends State<kpopPage> {
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Jazz"),
+                    Text(
+                      "Daftar Kpop",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontFamily: 'monday-feelings-font',
+                      ),
+                    ),
                     SizedBox(
                       height: 30,
                     ),

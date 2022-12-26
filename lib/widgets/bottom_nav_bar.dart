@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:meditation_app/constants.dart';
-import 'package:meditation_app/home.dart';
-import 'package:meditation_app/jadwal.dart';
-import 'package:meditation_app/main.dart';
-import 'package:meditation_app/profile.dart';
 
+import '../constants.dart';
+import '../home.dart';
+import '../jadwal.dart';
+import '../profile.dart';
 import '../screens/details_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -19,8 +18,8 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-      height: 80,
-      color: Colors.white,
+      height: 60,
+      color: Color.fromARGB(255, 242, 227, 218),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[

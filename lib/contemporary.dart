@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:meditation_app/profile.dart';
 
 import 'home.dart';
 import 'widgets/bottom_nav_bar.dart';
@@ -181,7 +180,14 @@ class _contemporaryPageState extends State<contemporaryPage> {
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Ballet"),
+                    Text(
+                      "Daftar Contemporary",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontFamily: 'monday-feelings-font',
+                      ),
+                    ),
                     SizedBox(
                       height: 30,
                     ),

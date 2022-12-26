@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "419864568094",
+    "project_id": "musvenfit",
+    "storage_bucket": "musvenfit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419864568094:android:8159859ac92a36147da90f",
+        "android_client_info": {
+          "package_name": "com.example.musvenfit_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419864568094-ipps5m18ogt95r1gq5lm9t3m6umu08h5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH82QE4f3bCPCEAUz6yFtiypurNLAb41E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419864568094-ipps5m18ogt95r1gq5lm9t3m6umu08h5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "419864568094-1qno3hunb7h2841vjs9e5sc3e4qsde25.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.musvenfitProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

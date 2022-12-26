@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:meditation_app/profile.dart';
 
@@ -7,13 +8,32 @@ import 'home.dart';
 import 'widgets/bottom_nav_bar.dart';
 
 class balletPage extends StatefulWidget {
-  const balletPage({Key key}) : super(key: key);
+  balletPage({Key key}) : super(key: key);
 
   @override
   State<balletPage> createState() => _balletPageState();
 }
 
 class _balletPageState extends State<balletPage> {
+  TextEditingController nama = TextEditingController();
+  TextEditingController ttl = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController no_tlp = TextEditingController();
+  TextEditingController danc = TextEditingController();
+  create() async {
+    try {
+      await FirebaseFirestore.instance.collection('users').doc().set({
+        "nama": nama.text,
+        "ttl": ttl.text,
+        "email": email.text,
+        "no_tlp": no_tlp.text,
+        "dance_diambil": danc.text,
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
   final List<String> images = [
     'https://images.unsplash.com/photo-1586882829491-b81178aa622e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
     'https://images.unsplash.com/photo-1586871608370-4adee64d1794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2862&q=80',
@@ -173,7 +193,9 @@ class _balletPageState extends State<balletPage> {
         context: context,
         builder: (BuildContext context) {
           return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
             child: Container(
+              height: 800,
               padding: const EdgeInsets.all(20),
               // color: Colors.amber,
               child: Center(
@@ -196,7 +218,9 @@ class _balletPageState extends State<balletPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        const TextField(
+                        TextField(
+                          // key: _formKey,
+                          controller: nama,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Nama',
@@ -205,7 +229,8 @@ class _balletPageState extends State<balletPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        const TextField(
+                        TextField(
+                          controller: ttl,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Tempat, Tanggal Lahir',
@@ -214,7 +239,8 @@ class _balletPageState extends State<balletPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        const TextField(
+                        TextField(
+                          controller: email,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Email',
@@ -223,7 +249,8 @@ class _balletPageState extends State<balletPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        const TextField(
+                        TextField(
+                          controller: no_tlp,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'No. Telepon',
@@ -232,7 +259,8 @@ class _balletPageState extends State<balletPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        const TextField(
+                        TextField(
+                          controller: danc,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Dance yang diambil',
@@ -257,7 +285,15 @@ class _balletPageState extends State<balletPage> {
                                       RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ))),
-                              onPressed: () {},
+                              onPressed: () {
+                                create();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) {
+                                    return HomeScreen();
+                                  }),
+                                );
+                              },
                               child: Text("Setuju"),
                             ),
                             SizedBox(
@@ -276,7 +312,9 @@ class _balletPageState extends State<balletPage> {
                                       RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ))),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
                               child: Text("Batal"),
                             ),
                           ],

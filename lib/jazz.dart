@@ -181,7 +181,14 @@ class _jazzPageState extends State<jazzPage> {
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Jazz"),
+                    Text(
+                      "Daftar Jazz",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontFamily: 'monday-feelings-font',
+                      ),
+                    ),
                     SizedBox(
                       height: 30,
                     ),

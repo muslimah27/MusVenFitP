@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'ballet.dart';
@@ -10,9 +11,26 @@ import 'widgets/bottom_nav_bar.dart';
 import 'widgets/search_bar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({
+  HomeScreen({
     Key key,
   }) : super(key: key);
+  List text = [
+    {
+      'judul': ' Acara 1',
+      'keterangan':
+          'Ujian Kenaikan 1 level untuk Ballet, graduation (gathering/memberi sertifikat)'
+    },
+    {
+      'judul': ' Acara 2',
+      'keterangan':
+          'Ujian Kenaikan 2 level untuk Ballet, graduation (gathering/memberi sertifikat)'
+    },
+    {
+      'judul': ' Acara 3',
+      'keterangan':
+          'Ujian Kenaikan 3 level untuk Ballet, graduation (gathering/memberi sertifikat)'
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -63,42 +81,42 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SearchBar(),
                     Container(
-                        height: 90,
-                        width: double.infinity,
-                        child: Container(
-                          padding: EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "INFO :",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontFamily: 'Caviar-Dreams',
-                                  ),
+                      height: 150,
+                      width: double.infinity,
+                      padding: EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: CarouselSlider(
+                        items: List.generate(text.length, (index) {
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "INFO : ${text[index]["judul"]}",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Caviar-Dreams',
                                 ),
-                                Text(
-                                  "Acara Internal :",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 107, 102, 102),
-                                    fontSize: 12,
-                                    fontFamily: 'Caviar-Dreams',
-                                  ),
+                              ),
+                              Text(
+                                "${text[index]["keterangan"]}",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
                                 ),
-                                Text(
-                                  "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 107, 102, 102),
-                                    fontSize: 12,
-                                    fontFamily: 'Caviar-Dreams',
-                                  ),
-                                ),
-                              ]),
-                        )),
+                              ),
+                            ],
+                          );
+                        }),
+                        options: CarouselOptions(
+                          viewportFraction: 1,
+                          autoPlay: true,
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       height: 20,
                     ),
