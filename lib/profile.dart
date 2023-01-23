@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'widgets/bottom_nav_bar.dart';
 
-class ProfileScreen extends StatelessWidget {
+class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;

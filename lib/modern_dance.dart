@@ -1,6 +1,9 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:meditation_app/ballet.dart';
 import 'package:meditation_app/profile.dart';
 
 import 'home.dart';
@@ -14,6 +17,36 @@ class moderndancePage extends StatefulWidget {
 }
 
 class _moderndancePageState extends State<moderndancePage> {
+  TextEditingController nama = TextEditingController();
+  TextEditingController ttl = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController no_tlp = TextEditingController();
+  TextEditingController danc = TextEditingController();
+  create() async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(FirebaseAuth.instance.currentUser.email)
+          .update({
+        // "pembooking": FirebaseAuth.instance.currentUser.displayName,
+        "dance_diambil": danc.text,
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  cekLogin() async {
+    FirebaseAuth.instance.authStateChanges().listen((User user) {
+      if (user == null) {
+        print('Anda Harus Login');
+        Login(context);
+      } else {
+        BottomSheet(context);
+      }
+    });
+  }
+
   final List<String> images = [
     'https://images.unsplash.com/photo-1586882829491-b81178aa622e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
     'https://images.unsplash.com/photo-1586871608370-4adee64d1794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2862&q=80',
@@ -156,7 +189,7 @@ class _moderndancePageState extends State<moderndancePage> {
         alignment: Alignment(0.1, 1),
         child: FloatingActionButton.extended(
           onPressed: () {
-            BottomSheet(context);
+            cekLogin();
           },
           backgroundColor: Color.fromARGB(251, 252, 251, 235),
           label: Text(
@@ -173,7 +206,9 @@ class _moderndancePageState extends State<moderndancePage> {
         context: context,
         builder: (BuildContext context) {
           return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
             child: Container(
+              height: 800,
               padding: const EdgeInsets.all(20),
               // color: Colors.amber,
               child: Center(
@@ -182,7 +217,7 @@ class _moderndancePageState extends State<moderndancePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Daftar Modern Dance",
+                      "Daftar Ballet",
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 15,
@@ -196,43 +231,8 @@ class _moderndancePageState extends State<moderndancePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        const TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Nama',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        const TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Tempat, Tanggal Lahir',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        const TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Email',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        const TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'No. Telepon',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        const TextField(
+                        TextField(
+                          controller: danc,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Dance yang diambil',
@@ -257,7 +257,15 @@ class _moderndancePageState extends State<moderndancePage> {
                                       RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ))),
-                              onPressed: () {},
+                              onPressed: () {
+                                create();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) {
+                                    return HomeScreen();
+                                  }),
+                                );
+                              },
                               child: Text("Setuju"),
                             ),
                             SizedBox(
@@ -276,11 +284,120 @@ class _moderndancePageState extends State<moderndancePage> {
                                       RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ))),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
                               child: Text("Batal"),
                             ),
                           ],
                         )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
+  }
+
+  Future<void> Login(BuildContext context) {
+    return showModalBottomSheet<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Container(
+              height: 800,
+              padding: const EdgeInsets.all(20),
+              // color: Colors.amber,
+              child: Center(
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Anda Belum Login",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'monday-feelings-font',
+                            ),
+                          ),
+                          Text(
+                            "Silahkan Login",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'monday-feelings-font',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        TextField(
+                          // key: _formKey,
+                          controller: nama,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Email',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        TextField(
+                          controller: ttl,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Password',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text("atau"),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            print("login dengan google");
+                            authC.signInWithGoogle();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(14),
+                            decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: Row(children: [
+                              Icon(
+                                Icons.sign_language,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Sign In dengan Google",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600),
+                              )
+                            ]),
+                          ),
+                        ),
                       ],
                     ),
                   ],

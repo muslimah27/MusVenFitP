@@ -1,27 +1,58 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:meditation_app/controller/controller.dart';
 import 'package:meditation_app/profile.dart';
 
 import 'home.dart';
 import 'widgets/bottom_nav_bar.dart';
 
 class jazzPage extends StatefulWidget {
-  const jazzPage({Key key}) : super(key: key);
+  jazzPage({Key key}) : super(key: key);
 
   @override
   State<jazzPage> createState() => _jazzPageState();
 }
 
+final authC = AuthController();
+
 class _jazzPageState extends State<jazzPage> {
+  TextEditingController nama = TextEditingController();
+  TextEditingController ttl = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController no_tlp = TextEditingController();
+  TextEditingController danc = TextEditingController();
+  create() async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(FirebaseAuth.instance.currentUser.email)
+          .update({
+        // "pembooking": FirebaseAuth.instance.currentUser.displayName,
+        "dance_diambil": danc.text,
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  cekLogin() async {
+    FirebaseAuth.instance.authStateChanges().listen((User user) {
+      if (user == null) {
+        print('Anda Harus Login');
+        Login(context);
+      } else {
+        BottomSheet(context);
+      }
+    });
+  }
+
   final List<String> images = [
-    'https://images.unsplash.com/photo-1586882829491-b81178aa622e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
-    'https://images.unsplash.com/photo-1586871608370-4adee64d1794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2862&q=80',
-    'https://images.unsplash.com/photo-1586901533048-0e856dff2c0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-    'https://images.unsplash.com/photo-1586902279476-3244d8d18285?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
-    'https://images.unsplash.com/photo-1586943101559-4cdcf86a6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1556&q=80',
-    'https://images.unsplash.com/photo-1586951144438-26d4e072b891?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-    'https://images.unsplash.com/photo-1586953983027-d7508a64f4bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
+    'assets/images/jazz.jpeg',
+    'assets/images/jazz1.jpeg',
+    'assets/images/jazz2.jpeg',
   ];
   @override
   Widget build(BuildContext context) {
@@ -156,7 +187,7 @@ class _jazzPageState extends State<jazzPage> {
         alignment: Alignment(0.1, 1),
         child: FloatingActionButton.extended(
           onPressed: () {
-            BottomSheet(context);
+            cekLogin();
           },
           backgroundColor: Color.fromARGB(251, 252, 251, 235),
           label: Text(
@@ -196,42 +227,6 @@ class _jazzPageState extends State<jazzPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        const TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Nama',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        const TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Tempat, Tanggal Lahir',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        const TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Email',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        const TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'No. Telepon',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
                         const TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
@@ -290,13 +285,111 @@ class _jazzPageState extends State<jazzPage> {
           );
         });
   }
-}
 
-final List<String> imgList = [
-  'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
-  'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
-  'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
-  'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
-];
+  Future<void> Login(BuildContext context) {
+    return showModalBottomSheet<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Container(
+              height: 800,
+              padding: const EdgeInsets.all(20),
+              // color: Colors.amber,
+              child: Center(
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Anda Belum Login",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'monday-feelings-font',
+                            ),
+                          ),
+                          Text(
+                            "Silahkan Login",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'monday-feelings-font',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        TextField(
+                          // key: _formKey,
+                          controller: nama,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Email',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        TextField(
+                          controller: ttl,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Password',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text("atau"),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            print("login dengan google");
+                            authC.signInWithGoogle();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(14),
+                            decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: Row(children: [
+                              Icon(
+                                Icons.sign_language,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Sign In dengan Google",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600),
+                              )
+                            ]),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
+  }
+}

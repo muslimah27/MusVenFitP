@@ -66,7 +66,7 @@ class BottomNavBar extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return ProfileScreen();
+                  return Profile();
                 }),
               );
             },
