@@ -138,7 +138,7 @@ class _balletPageState extends State<balletPage> {
                                 " ",
                               ),
                               Text(
-                                "ballet adalah tarian ",
+                                "Ballet adalah nama dari salah satu teknik tarian. Karya tari yang dikoreografi menggunakan teknik ini dinamakan balet, dan meliputi: tarian itu sendiri, mime, akting, dan musik. Balet dapat ditampilkan sendiri atau sebagai bagian dari sebuah opera.",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,

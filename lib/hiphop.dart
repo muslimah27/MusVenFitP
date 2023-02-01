@@ -48,13 +48,9 @@ class _hiphopPageState extends State<hiphopPage> {
   }
 
   final List<String> images = [
-    'https://images.unsplash.com/photo-1586882829491-b81178aa622e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
-    'https://images.unsplash.com/photo-1586871608370-4adee64d1794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2862&q=80',
-    'https://images.unsplash.com/photo-1586901533048-0e856dff2c0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-    'https://images.unsplash.com/photo-1586902279476-3244d8d18285?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
-    'https://images.unsplash.com/photo-1586943101559-4cdcf86a6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1556&q=80',
-    'https://images.unsplash.com/photo-1586951144438-26d4e072b891?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-    'https://images.unsplash.com/photo-1586953983027-d7508a64f4bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
+    'assets/images/hiphop.jpeg',
+    'assets/images/hiphop.png',
+    'assets/images/hiphop2.png',
   ];
   @override
   Widget build(BuildContext context) {
@@ -139,7 +135,7 @@ class _hiphopPageState extends State<hiphopPage> {
                                 " ",
                               ),
                               Text(
-                                "HipHop adalah tarian ",
+                                "HipHop adalah berbagai gaya tari jalanan yang terutama dilakukan untuk musik hip hop atau yang telah berkembang sebagai bagian dari budaya hip hop. Hal ini dipengaruhi oleh berbagai gaya yang diciptakan pada 1970-an dan dipopulerkan oleh kru tari di Amerika Serikat. ",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,

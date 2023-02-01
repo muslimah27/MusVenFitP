@@ -137,7 +137,7 @@ class _jazzPageState extends State<jazzPage> {
                                 " ",
                               ),
                               Text(
-                                "Jazz adalah tarian ",
+                                "Jazz adalah tarian dan gaya pertunjukan yang muncul di Amerika Serikat pada pertengahan abad ke-20. Tarian jazz mungkin mengacu pada jazz vernakular ke Broadway atau jazz dramatis. Kedua jenis ini memperluas gaya tarian vernakular Afrika-Amerika yang muncul dengan musik jazz. ",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,
