@@ -1,3 +1,6 @@
+// import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -84,24 +87,59 @@ class _dashboardAdminState extends State<dashboardAdmin> {
                           fontSize: 20),
                     ),
                   ),
+                  // grid
+                  Container(
+                    height: 300,
+                    child: StreamBuilder(
+                        stream: FirebaseFirestore.instance
+                            .collection('pesanan')
+                            .snapshots(),
+                        builder: (__,
+                            AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>>
+                                snapshot) {
+                          if (snapshot.hasError) {
+                            return Text(
+                              "eor",
+                              style: TextStyle(
+                                  fontSize: 100,
+                                  color: Color.fromARGB(255, 226, 7, 7)),
+                            );
+                          }
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return Text(
+                              "Loading",
+                              style: TextStyle(color: Colors.white),
+                            );
+                          }
+                          final data = snapshot.requireData;
+                          return ListView.builder(
+                              itemCount: data.size,
+                              scrollDirection: Axis.vertical,
+                              itemBuilder: (context, int index) {
+                                return Container(
+                                  height: 80,
+                                  // decoration: BoxDecoration(
+                                  //     color: Colors.grey,
+                                  //     borderRadius: BorderRadius.circular(12)),
+                                  child: ListTile(
+                                      leading: Icon(Icons.check),
+                                      trailing: Text(
+                                        '${data.docs[index]['dance_diambil']}',
+                                        style: TextStyle(
+                                            color: Colors.green, fontSize: 15),
+                                      ),
+                                      title: Text(
+                                          ' ${data.docs[index]['pembooking']}')),
+                                );
+                              });
+                        }),
+                  ),
                 ],
               ),
             ),
           )
         ],
-      ),
-      floatingActionButton: Align(
-        alignment: Alignment(0.1, 1),
-        child: FloatingActionButton.extended(
-          onPressed: () {
-            // cekLogin();
-          },
-          backgroundColor: Color.fromARGB(251, 252, 251, 235),
-          label: Text(
-            "Login",
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
       ),
       bottomNavigationBar: BottomNavBarAdmin(),
     );

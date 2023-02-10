@@ -25,14 +25,14 @@ class _balletPageState extends State<balletPage> {
   TextEditingController email = TextEditingController();
   TextEditingController no_tlp = TextEditingController();
   TextEditingController danc = TextEditingController();
+  String namaDance = 'Ballet';
+
   create() async {
     try {
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(FirebaseAuth.instance.currentUser.email)
-          .update({
-        // "pembooking": FirebaseAuth.instance.currentUser.displayName,
+      await FirebaseFirestore.instance.collection('pesanan').add({
+        "pembooking": nama.text,
         "dance_diambil": danc.text,
+        "no_telp": no_tlp.text,
       });
     } catch (e) {
       print(e);
@@ -188,8 +188,8 @@ class _balletPageState extends State<balletPage> {
         alignment: Alignment(0.1, 1),
         child: FloatingActionButton.extended(
           onPressed: () {
-            // BottomSheet(context);
-            cekLogin();
+            BottomSheet(context);
+            // authC.signInWithGoogle();
           },
           backgroundColor: Color.fromARGB(251, 252, 251, 235),
           label: Text(
@@ -232,10 +232,31 @@ class _balletPageState extends State<balletPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         TextField(
-                          controller: danc,
+                          controller: danc..text = namaDance.toString(),
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Dance yang diambil',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        TextField(
+                          controller: nama,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Nama anda',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        TextField(
+                          controller: no_tlp,
+                          // inputFormatters: [],
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'No telp',
                           ),
                         ),
                         SizedBox(

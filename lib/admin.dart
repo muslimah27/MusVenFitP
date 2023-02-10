@@ -186,19 +186,19 @@ class _adminPageState extends State<adminPage> {
           )
         ],
       ),
-      floatingActionButton: Align(
-        alignment: Alignment(0.1, 1),
-        child: FloatingActionButton.extended(
-          onPressed: () {
-            cekLogin();
-          },
-          backgroundColor: Color.fromARGB(251, 252, 251, 235),
-          label: Text(
-            "Login",
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      ),
+      // floatingActionButton: Align(
+      //   alignment: Alignment(0.1, 1),
+      //   child: FloatingActionButton.extended(
+      //     onPressed: () {
+      //       cekLogin();
+      //     },
+      //     backgroundColor: Color.fromARGB(251, 252, 251, 235),
+      //     label: Text(
+      //       "Login",
+      //       style: TextStyle(color: Colors.black),
+      //     ),
+      //   ),
+      // ),
     );
   }
 
