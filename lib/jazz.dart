@@ -170,7 +170,7 @@ class _jazzPageState extends State<jazzPage> {
                                 itemBuilder: (context, index, realIdx) {
                                   return Container(
                                     child: Center(
-                                        child: Image.network(images[index],
+                                        child: Image.asset(images[index],
                                             fit: BoxFit.cover, width: 1000)),
                                   );
                                 },
