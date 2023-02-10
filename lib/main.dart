@@ -7,7 +7,7 @@ import 'firebase_options.dart';
 import 'home.dart';
 
 const List<String> _assetNames = <String>[
-  // 'assets/notfound.svg', // unco            mment to test an asset that doesn't exist.
+  // 'assets/notfound.svg',
   'assets/icons/home1.svg',
   'assets/icons/jdwl.svg',
   'assets/icons/profile.svg',
