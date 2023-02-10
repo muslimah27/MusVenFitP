@@ -5,20 +5,21 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:meditation_app/controller/controller.dart';
 import 'package:meditation_app/profile.dart';
+import 'package:meditation_app/widgets/admin/dashboard_admin.dart';
 
 import 'home.dart';
 import 'widgets/bottom_nav_bar.dart';
 
-class jazzPage extends StatefulWidget {
-  jazzPage({Key key}) : super(key: key);
+class adminPage extends StatefulWidget {
+  adminPage({Key key}) : super(key: key);
 
   @override
-  State<jazzPage> createState() => _jazzPageState();
+  State<adminPage> createState() => _adminPageState();
 }
 
 final authC = AuthController();
 
-class _jazzPageState extends State<jazzPage> {
+class _adminPageState extends State<adminPage> {
   TextEditingController nama = TextEditingController();
   TextEditingController ttl = TextEditingController();
   TextEditingController email = TextEditingController();
@@ -104,7 +105,7 @@ class _jazzPageState extends State<jazzPage> {
                   Padding(
                     padding: const EdgeInsets.all(2),
                     child: Text(
-                      "About Jazz",
+                      "Login Admin",
                       style: TextStyle(
                           fontWeight: FontWeight.w900,
                           fontFamily: "short-baby-font",
@@ -112,71 +113,73 @@ class _jazzPageState extends State<jazzPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 300,
                   ),
-                  Container(
-                      height: 160,
-                      width: double.infinity,
-                      child: Container(
-                        padding: EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(251, 252, 251, 235),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Mengenai Jazz",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontFamily: 'monday-feelings-font',
-                                ),
-                              ),
-                              Text(
-                                " ",
-                              ),
-                              Text(
-                                "Jazz adalah tarian dan gaya pertunjukan yang muncul di Amerika Serikat pada pertengahan abad ke-20. Tarian jazz mungkin mengacu pada jazz vernakular ke Broadway atau jazz dramatis. Kedua jenis ini memperluas gaya tarian vernakular Afrika-Amerika yang muncul dengan musik jazz. ",
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 107, 102, 102),
-                                  fontSize: 12,
-                                  fontFamily: 'Caviar-Dreams',
-                                ),
-                              ),
-                            ]),
-                      )),
                   SizedBox(
                     height: 20,
                   ),
-                  Container(
-                      // height: 160,
-                      width: double.infinity,
-                      child: Container(
-                        padding: EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(251, 252, 251, 235),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CarouselSlider.builder(
-                                itemCount: images.length,
-                                options: CarouselOptions(
-                                  autoPlay: true,
-                                  aspectRatio: 2.0,
-                                  enlargeCenterPage: true,
-                                ),
-                                itemBuilder: (context, index, realIdx) {
-                                  return Container(
-                                    child: Center(
-                                        child: Image.asset(images[index],
-                                            fit: BoxFit.cover, width: 1000)),
-                                  );
-                                },
-                              ),
-                            ]),
-                      )),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      TextField(
+                        // key: _formKey,
+                        controller: nama,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Email',
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextField(
+                        controller: ttl,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Password',
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("atau"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          print("login dengan akun");
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return dashboardAdmin();
+                          }));
+                          // authC.signInWithGoogle();
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(14),
+                          decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Row(children: [
+                            Icon(
+                              Icons.sign_language,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600),
+                            )
+                          ]),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -191,7 +194,7 @@ class _jazzPageState extends State<jazzPage> {
           },
           backgroundColor: Color.fromARGB(251, 252, 251, 235),
           label: Text(
-            "Daftar",
+            "Login",
             style: TextStyle(color: Colors.black),
           ),
         ),
@@ -358,8 +361,8 @@ class _jazzPageState extends State<jazzPage> {
                         ),
                         InkWell(
                           onTap: () {
-                            print("login dengan google");
-                            authC.signInWithGoogle();
+                            print("login dengan akun");
+                            // authC.signInWithGoogle();
                           },
                           child: Container(
                             padding: EdgeInsets.all(14),
@@ -375,7 +378,7 @@ class _jazzPageState extends State<jazzPage> {
                                 width: 10,
                               ),
                               Text(
-                                "Sign In dengan Google",
+                                "Login",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600),

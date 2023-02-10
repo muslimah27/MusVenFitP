@@ -3,15 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:meditation_app/admin.dart';
+import 'package:meditation_app/home.dart';
+import 'package:meditation_app/jadwal.dart';
+import 'package:meditation_app/profile.dart';
 
-import '../constants.dart';
-import '../home.dart';
-import '../jadwal.dart';
-import '../profile.dart';
-import '../screens/details_screen.dart';
+import '../../constants.dart';
 
-class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({
+class BottomNavBarAdmin extends StatelessWidget {
+  const BottomNavBarAdmin({
     Key key,
   }) : super(key: key);
 
@@ -33,61 +32,37 @@ class BottomNavBar extends StatelessWidget {
                   }),
                 );
               },
-              child: SvgPicture.asset(
-                "assets/icons/home.svg", //asset location
-                //color: Color.fromARGB(255, 110, 110, 110), //svg color
-                semanticsLabel: 'SVG From asset folder.', height: 20,
+              child: Icon(
+                Icons.drafts_sharp,
+                color: Colors.grey,
               )),
           InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return HomeScreen();
-                }),
-              );
-            },
-            child: InkWell(
-              child: Icon(
-                Icons.calendar_month,
-              ),
-              //color: Color.fromARGB(255, 110, 110, 110)),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
-                    return Jadwal();
+                    return HomeScreen();
                   }),
                 );
               },
-            ),
-          ),
+              child: Icon(
+                Icons.person_pin,
+                color: Colors.grey,
+              )),
           InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return Profile();
-                }),
-              );
-            },
-            child: Icon(
-              Icons.person,
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return adminPage();
-                }),
-              );
-            },
-            child: Icon(
-              Icons.list,
-            ),
-          )
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return HomeScreen();
+                  }),
+                );
+              },
+              child: Icon(
+                Icons.info,
+                color: Colors.grey,
+              )),
+
           //color: Color.fromARGB(255, 110, 110, 110))),
         ],
       ),
