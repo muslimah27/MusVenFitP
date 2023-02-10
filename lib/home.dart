@@ -55,7 +55,8 @@ class HomeScreen extends StatelessWidget {
             child: Container(
               height: 1400,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -63,13 +64,13 @@ class HomeScreen extends StatelessWidget {
                       alignment: Alignment.topRight,
                       child: Container(
                         alignment: Alignment.center,
-                        height: 52,
+                        height: 100,
                         width: 52,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF2BEA1),
-                          shape: BoxShape.circle,
+                        decoration: BoxDecoration(),
+                        child: Image.asset(
+                          "assets/icons/logo1.png",
+                          height: 100,
                         ),
-                        child: Image.asset("assets/icons/chat.png"),
                       ),
                     ),
                     Text(

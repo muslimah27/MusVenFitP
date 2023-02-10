@@ -34,11 +34,26 @@ class Profile extends StatelessWidget {
             body: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: Container(
+                alignment: Alignment.centerLeft,
                 width: width,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 45),
                 child: Column(
                   children: [
+                    Center(
+                      child: Container(
+                        height: 120.0,
+                        width: 300.0,
+                        // color: Colors.blue[50],
+                        child: Align(
+                          alignment: Alignment.topRight,
+                          child: Image.asset(
+                            "assets/icons/logo1.png",
+                            height: 100,
+                          ),
+                        ),
+                      ),
+                    ),
                     Align(
                       alignment: Alignment(-0.8, 0.8),
                       child: Text(
@@ -56,7 +71,7 @@ class Profile extends StatelessWidget {
                     CircleAvatar(
                       backgroundColor: Colors.amber,
                       radius: 80,
-                      foregroundImage: AssetImage("assets/icons/ballet.jpg"),
+                      // foregroundImage: AssetImage("assets/icons/ballet.png"),
                     ),
                     SizedBox(
                       height: 5,

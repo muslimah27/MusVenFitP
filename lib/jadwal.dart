@@ -28,6 +28,16 @@ class Jadwal extends StatelessWidget {
               child: ListView(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  Container(
+                    alignment: Alignment.topRight,
+                    height: 80,
+                    width: 52,
+                    decoration: BoxDecoration(),
+                    child: Image.asset(
+                      "assets/icons/logo1.png",
+                      height: 100,
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 50),
                     child: Text(
@@ -61,7 +71,7 @@ class Jadwal extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                " ",
+                                "14.00 --> BABY CLASS",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,
@@ -69,7 +79,15 @@ class Jadwal extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                "15.30 --> GRADE 3 (LENNY,MARIA)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "               1,5 JAM (QUENI,CELINE)",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,
@@ -82,7 +100,7 @@ class Jadwal extends StatelessWidget {
                     height: 20,
                   ),
                   Container(
-                      height: 90,
+                      height: 120,
                       width: double.infinity,
                       child: Container(
                         padding: EdgeInsets.all(12),
@@ -101,7 +119,7 @@ class Jadwal extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                " ",
+                                "14.00 --> PREBALLET (IVON)",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,
@@ -109,7 +127,23 @@ class Jadwal extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                "15.00 --> GRADE 3 (IVON)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "16.00 --> MD KIDS (KO ANDRI)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "17.00 --> PRIMARY (IVON)",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,
@@ -141,7 +175,7 @@ class Jadwal extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                " ",
+                                "14.30 --> KPOP KECIL (VENA)",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,
@@ -149,7 +183,15 @@ class Jadwal extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                "15.30 --> JAZZ KIDS (LIES)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "16.30 --> SUB EL (LIES)",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,
@@ -182,7 +224,7 @@ class Jadwal extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  " ",
+                                  "13.30 --> BABY CLASS (IVONE)",
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 107, 102, 102),
                                     fontSize: 12,
@@ -190,7 +232,23 @@ class Jadwal extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                  "14.30 --> GRADE 6 (IVONE)",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 12,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                ),
+                                Text(
+                                  "15.30 --> GRADE 5 (IVONE)",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 12,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                ),
+                                Text(
+                                  "17.30 --> ADULT",
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 107, 102, 102),
                                     fontSize: 12,
@@ -204,7 +262,7 @@ class Jadwal extends StatelessWidget {
                     height: 20,
                   ),
                   Container(
-                      height: 90,
+                      height: 120,
                       width: double.infinity,
                       child: Container(
                         padding: EdgeInsets.all(12),
@@ -223,7 +281,7 @@ class Jadwal extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                " ",
+                                "13.30 --> TINY A (IVONE,LENNY)",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,
@@ -231,7 +289,23 @@ class Jadwal extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "Ujian Kenaikan level untuk Ballet, graduation (gathering/memberi sertifikat)",
+                                "14.00 --> MD KIDS (KO ANDRI)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "15.00 --> MD BESAR (KO ANDRI)",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 107, 102, 102),
+                                  fontSize: 12,
+                                  fontFamily: 'Caviar-Dreams',
+                                ),
+                              ),
+                              Text(
+                                "16.00 --> KPOP TEEN (VENA)",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 107, 102, 102),
                                   fontSize: 12,
@@ -240,6 +314,48 @@ class Jadwal extends StatelessWidget {
                               ),
                             ]),
                       )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SingleChildScrollView(
+                    child: Container(
+                        // height: 90,
+                        width: double.infinity,
+                        child: Container(
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "SABTU:",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                ),
+                                Text(
+                                  "10.00 --> TINY A",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 12,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                ),
+                                Text(
+                                  "11.00 --> JAZZ KIDS",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 107, 102, 102),
+                                    fontSize: 12,
+                                    fontFamily: 'Caviar-Dreams',
+                                  ),
+                                ),
+                              ]),
+                        )),
+                  ),
                 ],
               ),
             ),
