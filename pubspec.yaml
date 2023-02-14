@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.1.0 <3.0.0'
 
 dependencies:
   flutter:
@@ -77,31 +77,23 @@ flutter:
   fonts:
     - family: harlow-solid-italic
       fonts:
-      
         - asset: assets/fonts/harlow-solid-italic/harlow-solid-italic.ttf
           weight: 600
 
-    
     - family: Caviar-Dreams
       fonts:
-      
         - asset: assets/fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf
           weight: 600
-        
 
     - family: short-baby-font
       fonts:
-      
         - asset: assets/fonts/short-baby-font/ShortBaby-Mg2w.ttf
           weight: 600
 
     - family: monday-feelings-font
       fonts:
-      
         - asset: assets/fonts/monday-feelings-font/MondayFeelings-7BD2l.ttf
           weight: 600
-
-        
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
