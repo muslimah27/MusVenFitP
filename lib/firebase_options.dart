@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '419864568094',
     projectId: 'musvenfit',
     storageBucket: 'musvenfit.appspot.com',
+    androidClientId: '419864568094-ajp9ere0uf2mqp5t7vr04p0lvio4k6ek.apps.googleusercontent.com',
     iosClientId: '419864568094-1qno3hunb7h2841vjs9e5sc3e4qsde25.apps.googleusercontent.com',
     iosBundleId: 'com.example.musvenfitProject',
   );
@@ -77,6 +78,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '419864568094',
     projectId: 'musvenfit',
     storageBucket: 'musvenfit.appspot.com',
+    androidClientId: '419864568094-ajp9ere0uf2mqp5t7vr04p0lvio4k6ek.apps.googleusercontent.com',
     iosClientId: '419864568094-1qno3hunb7h2841vjs9e5sc3e4qsde25.apps.googleusercontent.com',
     iosBundleId: 'com.example.musvenfitProject',
   );

@@ -14,6 +14,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "419864568094-ajp9ere0uf2mqp5t7vr04p0lvio4k6ek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.musvenfit_project",
+            "certificate_hash": "359b1489aab0dafdfc83cc8041757591e845a742"
+          }
+        },
+        {
+          "client_id": "419864568094-tlrbfljfjv1m117l7dq7anc9ilag7cse.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.musvenfit_project",
+            "certificate_hash": "003dcac6a0bed773c468fea5b46422fefefc4f28"
+          }
+        },
+        {
           "client_id": "419864568094-ipps5m18ogt95r1gq5lm9t3m6umu08h5.apps.googleusercontent.com",
           "client_type": 3
         }
