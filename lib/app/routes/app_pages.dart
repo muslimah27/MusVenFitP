@@ -6,6 +6,8 @@ import '../modules/adminDashboard/bindings/admin_dashboard_binding.dart';
 import '../modules/adminDashboard/views/admin_dashboard_view.dart';
 import '../modules/bottomNavigationBar/bindings/bottom_navigation_bar_binding.dart';
 import '../modules/bottomNavigationBar/views/bottom_navigation_bar_view.dart';
+import '../modules/detailEdit/bindings/detail_edit_binding.dart';
+import '../modules/detailEdit/views/detail_edit_view.dart';
 import '../modules/detail_able_ballet/bindings/detail_able_ballet_binding.dart';
 import '../modules/detail_able_ballet/views/detail_able_ballet_view.dart';
 import '../modules/editDance/bindings/edit_dance_binding.dart';
@@ -82,18 +84,23 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ADMIN_DASHBOARD,
-      page: () => const AdminDashboardView(),
+      page: () => AdminDashboardView(),
       binding: AdminDashboardBinding(),
     ),
     GetPage(
       name: _Paths.EDIT_DANCE,
-      page: () => const EditDanceView(),
+      page: () => EditDanceView(),
       binding: EditDanceBinding(),
     ),
     GetPage(
       name: _Paths.EDIT_INFO,
-      page: () => const EditInfoView(),
+      page: () => EditInfoView(),
       binding: EditInfoBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_EDIT,
+      page: () => DetailEditView(),
+      binding: DetailEditBinding(),
     ),
   ];
 }

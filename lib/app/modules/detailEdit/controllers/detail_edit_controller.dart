@@ -4,10 +4,11 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-class EditDanceController extends GetxController {
-  //TODO: Implement EditDanceController
+class DetailEditController extends GetxController {
+  //TODO: Implement DetailEditController
 
   final count = 0.obs;
+
   String file_im = '';
 
   void UpImage() async {
@@ -19,12 +20,13 @@ class EditDanceController extends GetxController {
 
     Reference ref = FirebaseStorage.instance
         .ref()
-        .child('fotoDance/${file_im.toString()}_${DateTime.now()}.jpg');
+        .child('FotoMinu/${file_im.toString()}_${DateTime.now()}.jpg');
     await ref.putFile(File(image.path));
     ref.getDownloadURL().then((value) {
       // print(value);
       // gambar(value);
       file_im = value;
+
       update();
     });
   }

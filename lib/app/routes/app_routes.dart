@@ -15,6 +15,7 @@ abstract class Routes {
   static const ADMIN_DASHBOARD = _Paths.ADMIN_DASHBOARD;
   static const EDIT_DANCE = _Paths.EDIT_DANCE;
   static const EDIT_INFO = _Paths.EDIT_INFO;
+  static const DETAIL_EDIT = _Paths.DETAIL_EDIT;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const ADMIN_DASHBOARD = '/admin-dashboard';
   static const EDIT_DANCE = '/edit-dance';
   static const EDIT_INFO = '/edit-info';
+  static const DETAIL_EDIT = '/detail-edit';
 }

@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../controllers/edit_info_controller.dart';
 
 class EditInfoView extends GetView<EditInfoController> {
-  const EditInfoView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
