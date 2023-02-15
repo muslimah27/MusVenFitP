@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -26,14 +28,6 @@ class UserProfileView extends GetView<UserProfileController> {
                 alignment: Alignment.centerLeft,
                 image: AssetImage("assets/images/undraw_pilates_gpdb.png"),
               ),
-              // gradient: LinearGradient(
-              //   colors: [
-              //     Color.fromRGBO(4, 9, 35, 1),
-              //     Color.fromRGBO(39, 105, 171, 1),
-              //   ],
-              //   begin: FractionalOffset.bottomCenter,
-              //   end: FractionalOffset.topCenter,
-              // ),
             ),
           ),
           Scaffold(
@@ -167,6 +161,31 @@ class UserProfileView extends GetView<UserProfileController> {
                                                 fontFamily: 'Caviar-Dreams',
                                               ),
                                             ),
+                                            InkWell(
+                                              onTap: () {
+                                                auth.signOut();
+                                              },
+                                              child: Container(
+                                                  padding: EdgeInsets.all(12),
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12),
+                                                    color: Color.fromARGB(
+                                                      255,
+                                                      253,
+                                                      126,
+                                                      117,
+                                                    ),
+                                                  ),
+                                                  child: Text(
+                                                    "Logout",
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.w700),
+                                                  )),
+                                            ),
                                             Divider(
                                               thickness: 2,
                                             ),
@@ -273,7 +292,6 @@ class UserProfileView extends GetView<UserProfileController> {
                                               GestureDetector(
                                                 onTap: () {
                                                   print("object");
-                                                  auth.signOut();
                                                 },
                                                 child: Container(
                                                   height: innerHeight * 0.72,
