@@ -40,12 +40,6 @@ class EditDanceView extends GetView<EditDanceController> {
                       ),
                       alignment: Alignment.bottomLeft,
                       width: 20,
-                      child: InkWell(
-                        onTap: (() {
-                          Get.to(BottomNavigationBarView());
-                        }),
-                        child: Icon(Icons.arrow_back_sharp),
-                      ),
                     ),
                     SizedBox(
                       height: 30,
@@ -64,7 +58,7 @@ class EditDanceView extends GetView<EditDanceController> {
                       height: 100,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(2),
+                      padding: const EdgeInsets.all(12),
                       child: Text(
                         "Data Dance's",
                         style: TextStyle(

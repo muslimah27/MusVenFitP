@@ -57,7 +57,7 @@ class AdminDashboardView extends GetView<AdminDashboardController> {
                       Icons.light_sharp,
                       color: Colors.white,
                     ),
-                    label: 'Jadwal'),
+                    label: 'Info Acr..'),
               ],
             ));
       },

@@ -16,12 +16,14 @@ class AdminView extends GetView<AdminController> {
         children: <Widget>[
           Container(
             // Here the height of the container is 45% of our total height
-            height: size.height * .45,
+            height: 200,
             decoration: BoxDecoration(
               color: Color(0xFFF5CEB8),
               image: DecorationImage(
                 alignment: Alignment.centerLeft,
-                image: AssetImage("assets/images/undraw_pilates_gpdb.png"),
+                image: AssetImage(
+                  "assets/images/undraw_pilates_gpdb.png",
+                ),
               ),
             ),
           ),
@@ -61,7 +63,7 @@ class AdminView extends GetView<AdminController> {
                     ),
                   ),
                   SizedBox(
-                    height: 240,
+                    height: 100,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 12),
@@ -108,6 +110,12 @@ class AdminView extends GetView<AdminController> {
                               itemBuilder: (context, int index) {
                                 return Container(
                                   height: 80,
+                                  margin: EdgeInsets.all(2),
+                                  padding: EdgeInsets.all(12),
+                                  // height: 100,
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(68, 255, 190, 190),
+                                      borderRadius: BorderRadius.circular(12)),
                                   // decoration: BoxDecoration(
                                   //     color: Colors.grey,
                                   //     borderRadius: BorderRadius.circular(12)),
