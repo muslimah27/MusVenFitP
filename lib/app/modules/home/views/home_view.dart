@@ -195,7 +195,7 @@ class HomeView extends GetView<HomeController> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Image.asset(
+                                        Image.network(
                                           jenis_dance.docs[index]['ikon'],
                                           height: 100,
                                         ),

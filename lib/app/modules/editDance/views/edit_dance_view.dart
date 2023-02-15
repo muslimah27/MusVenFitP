@@ -73,9 +73,12 @@ class EditDanceView extends GetView<EditDanceController> {
                             fontSize: 20),
                       ),
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     // grid
                     Container(
-                      height: 400,
+                      height: 600,
                       child: StreamBuilder(
                           stream: FirebaseFirestore.instance
                               .collection('jenis_dance')
@@ -101,13 +104,18 @@ class EditDanceView extends GetView<EditDanceController> {
                             final dance = snapshot.requireData;
                             return ListView.builder(
                                 itemCount: dance.size,
+                                physics: BouncingScrollPhysics(),
                                 scrollDirection: Axis.vertical,
                                 itemBuilder: (context, int index) {
                                   return Container(
-                                    height: 80,
-                                    // decoration: BoxDecoration(
-                                    //     color: Colors.grey,
-                                    //     borderRadius: BorderRadius.circular(12)),
+                                    margin: EdgeInsets.all(2),
+                                    padding: EdgeInsets.all(12),
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(68, 255, 190, 190),
+                                        borderRadius:
+                                            BorderRadius.circular(12)),
                                     child: ListTile(
                                         leading: Image.network(
                                             dance.docs[index]['ikon']),
@@ -141,11 +149,22 @@ class EditDanceView extends GetView<EditDanceController> {
                                                           color: Colors.green,
                                                           fontSize: 15),
                                                     ),
-                                                    Text(
-                                                      'Delete',
-                                                      style: TextStyle(
-                                                          color: Colors.red,
-                                                          fontSize: 15),
+                                                    SizedBox(
+                                                      height: 4,
+                                                    ),
+                                                    InkWell(
+                                                      onTap: () {
+                                                        BottomSheethapus(
+                                                            context,
+                                                            dance,
+                                                            index);
+                                                      },
+                                                      child: Text(
+                                                        'Delete',
+                                                        style: TextStyle(
+                                                            color: Colors.red,
+                                                            fontSize: 15),
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -158,7 +177,10 @@ class EditDanceView extends GetView<EditDanceController> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                                ' ${dance.docs[index]['jenis']}'),
+                                              ' ${dance.docs[index]['jenis']}',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w600),
+                                            ),
                                             SizedBox(
                                               height: 12,
                                             ),
@@ -167,7 +189,7 @@ class EditDanceView extends GetView<EditDanceController> {
                                               overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
                                                   color: Color.fromARGB(
-                                                      255, 223, 123, 214),
+                                                      255, 85, 85, 85),
                                                   fontSize: 15),
                                             ),
                                           ],
@@ -193,6 +215,126 @@ class EditDanceView extends GetView<EditDanceController> {
           backgroundColor: Colors.green,
           child: const Icon(Icons.add),
         ));
+  }
+
+  Future<void> BottomSheethapus(BuildContext context, dance, index) {
+    dance;
+    final _jenisController = TextEditingController();
+    final _gambarController = controller.file_im;
+    final _deskripsiController = TextEditingController();
+    return showModalBottomSheet<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Container(
+              height: 800,
+              padding: const EdgeInsets.all(20),
+              // color: Colors.amber,
+              child: Center(
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Hapus Dance",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontFamily: 'monday-feelings-font',
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        TextField(
+                          // controller: _jenisController,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: dance.docs[index]['jenis'].toString(),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                  foregroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.white),
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.green),
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ))),
+                              onPressed: () {
+                                FirebaseFirestore.instance
+                                    .collection('jenis_dance')
+                                    .doc(dance.docs[index].id)
+                                    .delete()
+                                    .then((value) {
+                                  print(
+                                      "sukses Mengahpus ${dance.docs[index]['jenis']}");
+                                  Navigator.pop(context);
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(SnackBar(
+                                    backgroundColor:
+                                        Color.fromARGB(255, 255, 117, 163),
+                                    content: Text(
+                                        "HI, Sukses Mengahpus ${dance.docs[index]['jenis']}"),
+                                  ));
+                                });
+                                // create();
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(builder: (context) {
+                                //     return HomeView();
+                                //   }),
+                                // );
+                              },
+                              child: Text("Hapus"),
+                            ),
+                            SizedBox(
+                              width: 50,
+                            ),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                  foregroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.white),
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.red),
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ))),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text("Batal"),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
   }
 
   Future<void> BottomSheetAdd(BuildContext context) {
