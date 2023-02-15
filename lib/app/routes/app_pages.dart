@@ -2,10 +2,16 @@ import 'package:get/get.dart';
 
 import '../modules/admin/bindings/admin_binding.dart';
 import '../modules/admin/views/admin_view.dart';
+import '../modules/adminDashboard/bindings/admin_dashboard_binding.dart';
+import '../modules/adminDashboard/views/admin_dashboard_view.dart';
 import '../modules/bottomNavigationBar/bindings/bottom_navigation_bar_binding.dart';
 import '../modules/bottomNavigationBar/views/bottom_navigation_bar_view.dart';
 import '../modules/detail_able_ballet/bindings/detail_able_ballet_binding.dart';
 import '../modules/detail_able_ballet/views/detail_able_ballet_view.dart';
+import '../modules/editDance/bindings/edit_dance_binding.dart';
+import '../modules/editDance/views/edit_dance_view.dart';
+import '../modules/editInfo/bindings/edit_info_binding.dart';
+import '../modules/editInfo/views/edit_info_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
@@ -73,6 +79,21 @@ class AppPages {
       name: _Paths.ADMIN,
       page: () => AdminView(),
       binding: AdminBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADMIN_DASHBOARD,
+      page: () => const AdminDashboardView(),
+      binding: AdminDashboardBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_DANCE,
+      page: () => const EditDanceView(),
+      binding: EditDanceBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_INFO,
+      page: () => const EditInfoView(),
+      binding: EditInfoBinding(),
     ),
   ];
 }

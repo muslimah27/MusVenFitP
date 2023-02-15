@@ -194,7 +194,8 @@ class UserProfileView extends GetView<UserProfileController> {
                                             InkWell(
                                               onTap: () {
                                                 print("Kehalaman Admin");
-                                                Get.offAllNamed(Routes.ADMIN);
+                                                Get.offAllNamed(
+                                                    Routes.ADMIN_DASHBOARD);
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.all(12),

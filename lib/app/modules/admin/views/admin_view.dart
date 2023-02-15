@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:meditation_app/app/modules/bottomNavigationBar/views/bottom_navigation_bar_view.dart';
+import 'package:meditation_app/app/modules/userProfile/views/user_profile_view.dart';
 
 import '../controllers/admin_controller.dart';
 
@@ -40,12 +42,7 @@ class AdminView extends GetView<AdminController> {
                     width: 20,
                     child: InkWell(
                       onTap: (() {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) {
-                        //     // return HomeScreen();
-                        //   }),
-                        // );
+                        Get.to(BottomNavigationBarView());
                       }),
                       child: Icon(Icons.arrow_back_sharp),
                     ),
