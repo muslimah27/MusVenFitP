@@ -1,10 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
+//
+  final _auth = FirebaseAuth.instance;
+//
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _namaController = TextEditingController();
+  final _ttlController = TextEditingController();
+  final _nomor_teleponController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,6 +47,7 @@ class LoginView extends GetView<LoginController> {
                       child: Column(
                         children: [
                           TextField(
+                            controller: _emailController,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
@@ -50,6 +61,7 @@ class LoginView extends GetView<LoginController> {
                             height: 30,
                           ),
                           TextField(
+                            controller: _passwordController,
                             style: TextStyle(),
                             obscureText: true,
                             decoration: InputDecoration(
@@ -76,7 +88,18 @@ class LoginView extends GetView<LoginController> {
                                 backgroundColor: Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () async {
+                                      final user = await _auth
+                                          .signInWithEmailAndPassword(
+                                              email: _emailController.text,
+                                              password:
+                                                  _passwordController.text);
+                                      if (user != null) {
+                                        // print(email);
+                                        Get.offAllNamed(
+                                            Routes.BOTTOM_NAVIGATION_BAR);
+                                      }
+                                    },
                                     icon: Icon(
                                       Icons.arrow_forward,
                                     )),

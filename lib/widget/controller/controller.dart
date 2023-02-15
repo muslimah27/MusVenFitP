@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:meditation_app/app/modules/login/views/login_view.dart';
 
 class AuthController {
   UserCredential _userCredential;
@@ -43,5 +45,11 @@ class AuthController {
       });
     }
     // Get.offAllNamed(Routes.HOME);
+  }
+
+  void signOut() async {
+    await FirebaseAuth.instance.signOut();
+
+    Get.to(LoginView());
   }
 }

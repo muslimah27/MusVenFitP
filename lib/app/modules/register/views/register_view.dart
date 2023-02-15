@@ -1,10 +1,21 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:meditation_app/app/modules/bottomNavigationBar/views/bottom_navigation_bar_view.dart';
 
 import '../controllers/register_controller.dart';
 
 class RegisterView extends GetView<RegisterController> {
+  // TextEditingController _passwordController = TextEditingController();
+  // TextEditingController _emailController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _namaController = TextEditingController();
+  final _ttlController = TextEditingController();
+  final _nomor_teleponController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +34,7 @@ class RegisterView extends GetView<RegisterController> {
             Container(
               padding: EdgeInsets.only(left: 35, top: 30),
               child: Text(
-                'Create\nAccount',
+                'Buat\nAkunmu',
                 style: TextStyle(color: Colors.white, fontSize: 33),
               ),
             ),
@@ -39,6 +50,7 @@ class RegisterView extends GetView<RegisterController> {
                       child: Column(
                         children: [
                           TextField(
+                            controller: _namaController,
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
@@ -53,7 +65,7 @@ class RegisterView extends GetView<RegisterController> {
                                     color: Colors.black,
                                   ),
                                 ),
-                                hintText: "Name",
+                                hintText: "Nama ",
                                 hintStyle: TextStyle(color: Colors.white),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -62,7 +74,63 @@ class RegisterView extends GetView<RegisterController> {
                           SizedBox(
                             height: 30,
                           ),
+                          //
+
                           TextField(
+                            controller: _ttlController,
+                            style: TextStyle(color: Colors.white),
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                hintText: "TempaT Tanggal Lahir",
+                                hintStyle: TextStyle(color: Colors.white),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          //
+                          TextField(
+                            controller: _nomor_teleponController,
+                            style: TextStyle(color: Colors.white),
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                hintText: "No. Telp",
+                                hintStyle: TextStyle(color: Colors.white),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                          ),
+
+                          SizedBox(
+                            height: 30,
+                          ),
+                          //
+                          TextField(
+                            controller: _emailController,
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
@@ -87,6 +155,7 @@ class RegisterView extends GetView<RegisterController> {
                             height: 30,
                           ),
                           TextField(
+                            controller: _passwordController,
                             style: TextStyle(color: Colors.white),
                             obscureText: true,
                             decoration: InputDecoration(
@@ -126,7 +195,39 @@ class RegisterView extends GetView<RegisterController> {
                                 backgroundColor: Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      FirebaseAuth.instance
+                                          .createUserWithEmailAndPassword(
+                                              email: _emailController.text,
+                                              password: _passwordController.text
+                                                  .trim())
+                                          .then((value) {
+                                        // save ke database user
+                                        FirebaseFirestore.instance
+                                            .collection('users')
+                                            .doc(_emailController.text)
+                                            .set({
+                                          'nama': _namaController.text,
+                                          'email': _emailController.text,
+                                          'nomor_telepon':
+                                              _nomor_teleponController.text,
+                                          'dance_diambil': null,
+                                          'ttl': _ttlController.text,
+                                          'photo': FirebaseAuth
+                                              .instance.currentUser.photoURL
+                                        });
+
+                                        //
+                                        print("sukses");
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    BottomNavigationBarView()));
+                                      }).onError((error, stackTrace) {
+                                        print("error ${error.toString()}");
+                                      });
+                                    },
                                     icon: Icon(
                                       Icons.arrow_forward,
                                     )),

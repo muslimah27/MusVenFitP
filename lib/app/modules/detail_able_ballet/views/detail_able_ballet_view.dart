@@ -2,8 +2,12 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'package:get/get.dart';
+import 'package:get/get.dart';
 import 'package:get/get.dart';
 import 'package:meditation_app/app/routes/app_pages.dart';
 
@@ -19,7 +23,8 @@ class DetailAbleBalletView extends GetView<DetailAbleBalletController> {
   TextEditingController email = TextEditingController();
   TextEditingController no_tlp = TextEditingController();
   TextEditingController danc = TextEditingController();
-  String namaDance = 'Ballet';
+  String namaDance = Get.arguments['jenis'];
+  final DetailAbleBalletController controller = Get.find();
 
   create() async {
     try {
@@ -27,8 +32,29 @@ class DetailAbleBalletView extends GetView<DetailAbleBalletController> {
         "pembooking": nama.text,
         "dance_diambil": danc.text,
         "no_telp": no_tlp.text,
-      });
+        "diambil": true,
+      }).then((value) {});
     } catch (e) {
+      print(e);
+    }
+    try {} catch (e) {
+      print(e);
+    }
+  }
+
+  updateDanceInuser() async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(FirebaseAuth.instance.currentUser.email)
+          .update({
+        "dance_diambil": danc.text,
+      }).then((value) {});
+      print("Sukses update users dance diambil ${namaDance}");
+    } catch (e) {
+      print(e);
+    }
+    try {} catch (e) {
       print(e);
     }
   }
@@ -176,6 +202,8 @@ class DetailAbleBalletView extends GetView<DetailAbleBalletController> {
         alignment: Alignment(0.1, 1),
         child: FloatingActionButton.extended(
           onPressed: () {
+            controller.showDisplayName();
+
             BottomSheet(context);
             // authC.signInWithGoogle();
           },
@@ -232,7 +260,8 @@ class DetailAbleBalletView extends GetView<DetailAbleBalletController> {
                           height: 20,
                         ),
                         TextField(
-                          controller: nama,
+                          controller: nama
+                            ..text = controller.nama_user.toString(),
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Nama anda',
@@ -270,6 +299,7 @@ class DetailAbleBalletView extends GetView<DetailAbleBalletController> {
                                   ))),
                               onPressed: () {
                                 create();
+                                updateDanceInuser();
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(builder: (context) {
