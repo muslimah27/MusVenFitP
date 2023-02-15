@@ -50,14 +50,14 @@ class AdminDashboardView extends GetView<AdminDashboardController> {
                     Icons.date_range,
                     color: Colors.white,
                   ),
-                  label: 'Jadwal',
+                  label: 'Dance',
                 ),
                 BottomNavigationBarItem(
                     icon: Icon(
-                      Icons.person,
+                      Icons.light_sharp,
                       color: Colors.white,
                     ),
-                    label: 'Account'),
+                    label: 'Jadwal'),
               ],
             ));
       },

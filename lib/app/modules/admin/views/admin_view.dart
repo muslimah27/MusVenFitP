@@ -64,7 +64,7 @@ class AdminView extends GetView<AdminController> {
                     height: 240,
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(2),
+                    padding: const EdgeInsets.only(top: 12),
                     child: Text(
                       "Data Pemesan",
                       style: TextStyle(
@@ -72,6 +72,9 @@ class AdminView extends GetView<AdminController> {
                           // fontFamily: "short-baby-font",
                           fontSize: 20),
                     ),
+                  ),
+                  SizedBox(
+                    height: 12,
                   ),
                   // grid
                   Container(
