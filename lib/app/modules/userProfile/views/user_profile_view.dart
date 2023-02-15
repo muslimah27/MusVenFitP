@@ -252,27 +252,8 @@ class UserProfileView extends GetView<UserProfileController> {
                                 )
                               : Column(
                                   children: [
-                                    Center(
-                                      child: Container(
-                                        // height: 120.0,
-                                        width: 300.0,
-                                        // color: Colors.blue[50],
-                                        child: Align(
-                                          alignment: Alignment.topRight,
-                                          child: Image.asset(
-                                            "assets/icons/logo1.png",
-                                            height: 40,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
                                     SizedBox(
                                       height: 22,
-                                    ),
-                                    CircleAvatar(
-                                      backgroundColor: Colors.amber,
-                                      radius: 80,
-                                      // foregroundImage: AssetImage("assets/icons/ballet.png"),
                                     ),
                                     SizedBox(
                                       height: 5,
@@ -341,6 +322,31 @@ class UserProfileView extends GetView<UserProfileController> {
                                                 fontSize: 27,
                                                 fontFamily: 'Caviar-Dreams',
                                               ),
+                                            ),
+                                            InkWell(
+                                              onTap: () {
+                                                auth.signOut();
+                                              },
+                                              child: Container(
+                                                  padding: EdgeInsets.all(12),
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12),
+                                                    color: Color.fromARGB(
+                                                      255,
+                                                      253,
+                                                      126,
+                                                      117,
+                                                    ),
+                                                  ),
+                                                  child: Text(
+                                                    "Logout",
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.w700),
+                                                  )),
                                             ),
                                             Divider(
                                               thickness: 2,
