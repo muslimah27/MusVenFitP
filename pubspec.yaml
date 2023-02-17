@@ -42,7 +42,7 @@ flutter:
     - assets/images/hiphop2.jpg
     - assets/images/
     - assets/images/login.png
-    - assets/images/register.png
+    - assets/images/register.jpg
   fonts:
     - family: harlow-solid-italic
       fonts:

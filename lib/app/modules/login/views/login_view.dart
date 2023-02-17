@@ -20,8 +20,7 @@ class LoginView extends GetView<LoginController> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/meditation_bg.png'),
-            fit: BoxFit.cover),
+            image: AssetImage('assets/images/login.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -31,7 +30,7 @@ class LoginView extends GetView<LoginController> {
             Container(
               padding: EdgeInsets.only(left: 35, top: 130),
               child: Text(
-                'Welcome\nBack',
+                'Welcome\n ABLE BALLET',
                 style: TextStyle(color: Colors.white, fontSize: 33),
               ),
             ),

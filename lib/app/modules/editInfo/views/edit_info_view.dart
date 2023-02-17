@@ -190,6 +190,7 @@ class EditInfoView extends GetView<EditInfoController> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
+          heroTag: "btn2",
           onPressed: () {
             BottomSheetAdd(context);
             // Add your onPressed code here!

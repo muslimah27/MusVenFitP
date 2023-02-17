@@ -202,6 +202,7 @@ class EditDanceView extends GetView<EditDanceController> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
+          heroTag: "btn1",
           onPressed: () {
             BottomSheetAdd(context);
             // Add your onPressed code here!

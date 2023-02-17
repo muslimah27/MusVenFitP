@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:meditation_app/app/modules/bottomNavigationBar/views/bottom_navigation_bar_view.dart';
+import 'package:meditation_app/app/modules/home/views/home_view.dart';
 import 'package:meditation_app/app/modules/userProfile/views/user_profile_view.dart';
 
 import '../controllers/admin_controller.dart';
@@ -44,7 +45,7 @@ class AdminView extends GetView<AdminController> {
                     width: 20,
                     child: InkWell(
                       onTap: (() {
-                        Get.to(BottomNavigationBarView());
+                        Get.to(HomeView());
                       }),
                       child: Icon(Icons.arrow_back_sharp),
                     ),
